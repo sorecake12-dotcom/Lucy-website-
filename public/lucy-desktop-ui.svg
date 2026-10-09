@@ -1,0 +1,380 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0413"/>
+      <stop offset="50%" stop-color="#08020d"/>
+      <stop offset="100%" stop-color="#12061e"/>
+    </linearGradient>
+    <linearGradient id="sidebarGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f051b"/>
+      <stop offset="100%" stop-color="#0b0314"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="50%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#7e22ce"/>
+    </linearGradient>
+    <linearGradient id="magentaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#e000a8"/>
+    </linearGradient>
+    <linearGradient id="accentGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5a0"/>
+      <stop offset="100%" stop-color="#00b880"/>
+    </linearGradient>
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e000a8" stop-opacity="0.4"/>
+      <stop offset="40%" stop-color="#a855f7" stop-opacity="0.25"/>
+      <stop offset="70%" stop-color="#7e22ce" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="centerOrb" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="25%" stop-color="#e000a8"/>
+      <stop offset="60%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#4c1d95"/>
+    </radialGradient>
+
+    <!-- Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1600" height="1000" fill="url(#bgGrad)"/>
+
+  <!-- Subtle High-Tech Background Grid -->
+  <g opacity="0.12" stroke="#a855f7" stroke-width="1">
+    <line x1="260" y1="52" x2="260" y2="1000"/>
+    <line x1="1260" y1="52" x2="1260" y2="1000"/>
+    <line x1="0" y1="52" x2="1600" y2="52"/>
+    <line x1="260" y1="680" x2="1260" y2="680"/>
+    <!-- Grid points -->
+    <path d="M 400 200 L 1120 200 M 400 350 L 1120 350 M 400 500 L 1120 500" stroke-dasharray="4,12"/>
+  </g>
+
+  <!-- Window Top Titlebar -->
+  <rect width="1600" height="52" fill="#0d0517" stroke="#251238" stroke-width="1"/>
+  
+  <!-- Window Control Buttons (Glass Dots) -->
+  <circle cx="28" cy="26" r="6.5" fill="#ff5f56" stroke="#e0443e" stroke-width="0.5"/>
+  <circle cx="48" cy="26" r="6.5" fill="#ffbd2e" stroke="#dea123" stroke-width="0.5"/>
+  <circle cx="68" cy="26" r="6.5" fill="#27c93f" stroke="#1aab29" stroke-width="0.5"/>
+
+  <!-- Titlebar App Title -->
+  <g transform="translate(100, 32)">
+    <text font-family="monospace, sans-serif" font-size="13" font-weight="700" fill="#f5efff" letter-spacing="2">LUCY DESKTOP RUNTIME</text>
+    <text x="210" font-family="monospace, sans-serif" font-size="11" fill="#a99bb8" letter-spacing="1">v2.4.0 // STANDALONE SUITE</text>
+  </g>
+
+  <!-- Titlebar Status Badges -->
+  <g transform="translate(1180, 16)">
+    <!-- Gemini Live PCM Pill -->
+    <rect width="210" height="24" rx="12" fill="#a855f7" fill-opacity="0.15" stroke="#a855f7" stroke-opacity="0.4"/>
+    <circle cx="16" cy="12" r="4" fill="#00e5a0" filter="url(#subtleGlow)"/>
+    <text x="28" y="16" font-family="monospace, sans-serif" font-size="10.5" font-weight="600" fill="#f5efff" letter-spacing="1">GEMINI LIVE PCM (38ms)</text>
+
+    <!-- Encryption Pill -->
+    <g transform="translate(225, 0)">
+      <rect width="160" height="24" rx="12" fill="#00e5a0" fill-opacity="0.1" stroke="#00e5a0" stroke-opacity="0.3"/>
+      <text x="14" y="16" font-family="monospace, sans-serif" font-size="10" font-weight="600" fill="#00e5a0" letter-spacing="1">AES-256 ENCRYPTED</text>
+    </g>
+  </g>
+
+  <!-- ================= LEFT SIDEBAR ================= -->
+  <rect x="0" y="52" width="260" height="948" fill="url(#sidebarGrad)" stroke="#251238" stroke-width="1"/>
+
+  <!-- Brand Block -->
+  <g transform="translate(24, 82)">
+    <rect width="36" height="36" rx="8" fill="url(#magentaGrad)"/>
+    <text x="18" y="24" font-family="sans-serif" font-size="18" font-weight="900" fill="#ffffff" text-anchor="middle">L</text>
+    <text x="48" y="18" font-family="sans-serif" font-size="16" font-weight="800" fill="#f5efff" letter-spacing="1.5">LUCY</text>
+    <text x="48" y="32" font-family="monospace, sans-serif" font-size="9.5" fill="#a855f7" letter-spacing="1">DESKTOP AGENT</text>
+  </g>
+
+  <!-- Subsystems Navigation List -->
+  <g transform="translate(24, 150)" font-family="monospace, sans-serif" font-size="12">
+    <!-- Active Item: Voice HUD -->
+    <g transform="translate(0, 0)">
+      <rect width="212" height="42" rx="8" fill="#a855f7" fill-opacity="0.15" stroke="#a855f7" stroke-opacity="0.5"/>
+      <circle cx="20" cy="21" r="5" fill="#00e5a0" filter="url(#subtleGlow)"/>
+      <text x="36" y="25" fill="#f5efff" font-weight="700">01. VOICE STREAM</text>
+      <text x="175" y="25" fill="#a855f7" font-size="10">LIVE</text>
+    </g>
+
+    <!-- Item: Task Agent -->
+    <g transform="translate(0, 52)">
+      <rect width="212" height="38" rx="8" fill="#140922" stroke="#251238"/>
+      <circle cx="20" cy="19" r="4" fill="#a99bb8"/>
+      <text x="36" y="23" fill="#a99bb8">02. TASK AGENT</text>
+    </g>
+
+    <!-- Item: System Control -->
+    <g transform="translate(0, 100)">
+      <rect width="212" height="38" rx="8" fill="#140922" stroke="#251238"/>
+      <circle cx="20" cy="19" r="4" fill="#a99bb8"/>
+      <text x="36" y="23" fill="#a99bb8">03. OS AUTOMATION</text>
+    </g>
+
+    <!-- Item: Browser Runner -->
+    <g transform="translate(0, 148)">
+      <rect width="212" height="38" rx="8" fill="#140922" stroke="#251238"/>
+      <circle cx="20" cy="19" r="4" fill="#a99bb8"/>
+      <text x="36" y="23" fill="#a99bb8">04. BROWSER BOT</text>
+    </g>
+
+    <!-- Item: Long-Term Memory -->
+    <g transform="translate(0, 196)">
+      <rect width="212" height="38" rx="8" fill="#140922" stroke="#251238"/>
+      <circle cx="20" cy="19" r="4" fill="#a99bb8"/>
+      <text x="36" y="23" fill="#a99bb8">05. MEMORY STORE</text>
+    </g>
+
+    <!-- Item: Computer Vision -->
+    <g transform="translate(0, 244)">
+      <rect width="212" height="38" rx="8" fill="#140922" stroke="#251238"/>
+      <circle cx="20" cy="19" r="4" fill="#a99bb8"/>
+      <text x="36" y="23" fill="#a99bb8">06. VISION STREAM</text>
+    </g>
+
+    <!-- Item: Companion -->
+    <g transform="translate(0, 292)">
+      <rect width="212" height="38" rx="8" fill="#140922" stroke="#251238"/>
+      <circle cx="20" cy="19" r="4" fill="#a99bb8"/>
+      <text x="36" y="23" fill="#a99bb8">07. MOBILE LINK</text>
+    </g>
+  </g>
+
+  <!-- Telemetry Gauges (Bottom Sidebar) -->
+  <g transform="translate(24, 560)">
+    <rect width="212" height="380" rx="12" fill="#120720" stroke="#2e1445" stroke-width="1"/>
+    
+    <text x="18" y="28" font-family="monospace, sans-serif" font-size="11" font-weight="700" fill="#c084fc" letter-spacing="1">SYSTEM TELEMETRY</text>
+    
+    <!-- CPU Meter -->
+    <g transform="translate(18, 50)">
+      <text font-family="monospace, sans-serif" font-size="10" fill="#a99bb8">CPU (AMD Ryzen 9)</text>
+      <text x="176" font-family="monospace, sans-serif" font-size="10" fill="#00e5a0" text-anchor="end">14%</text>
+      <rect y="8" width="176" height="5" rx="2.5" fill="#200d36"/>
+      <rect y="8" width="25" height="5" rx="2.5" fill="url(#magentaGrad)"/>
+    </g>
+
+    <!-- RAM Meter -->
+    <g transform="translate(18, 95)">
+      <text font-family="monospace, sans-serif" font-size="10" fill="#a99bb8">MEMORY (3.8GB/32GB)</text>
+      <text x="176" font-family="monospace, sans-serif" font-size="10" fill="#c084fc" text-anchor="end">12%</text>
+      <rect y="8" width="176" height="5" rx="2.5" fill="#200d36"/>
+      <rect y="8" width="22" height="5" rx="2.5" fill="url(#purpleGrad)"/>
+    </g>
+
+    <!-- GPU Meter -->
+    <g transform="translate(18, 140)">
+      <text font-family="monospace, sans-serif" font-size="10" fill="#a99bb8">GPU (RTX 4090)</text>
+      <text x="176" font-family="monospace, sans-serif" font-size="10" fill="#a855f7" text-anchor="end">22%</text>
+      <rect y="8" width="176" height="5" rx="2.5" fill="#200d36"/>
+      <rect y="8" width="39" height="5" rx="2.5" fill="url(#magentaGrad)"/>
+    </g>
+
+    <!-- Audio Latency Indicator -->
+    <g transform="translate(18, 185)">
+      <text font-family="monospace, sans-serif" font-size="10" fill="#a99bb8">AUDIO LATENCY</text>
+      <text x="176" font-family="monospace, sans-serif" font-size="10" fill="#00e5a0" text-anchor="end">38 ms</text>
+      <rect y="8" width="176" height="5" rx="2.5" fill="#200d36"/>
+      <rect y="8" width="45" height="5" rx="2.5" fill="#00e5a0"/>
+    </g>
+
+    <!-- Hardware & Core Stats -->
+    <g transform="translate(18, 230)" font-family="monospace, sans-serif" font-size="10" fill="#8d7d9e">
+      <line x1="0" y1="0" x2="176" y2="0" stroke="#251238"/>
+      <text y="22">WAKE-WORD: "HEY JARVIS"</text>
+      <text y="42">VAD STATUS: LISTENING</text>
+      <text y="62">PERSONA: JARVIS (V3)</text>
+      <text y="82">INPUT: PUSH-TO-TALK [CTRL+SPACE]</text>
+      <text y="102">AUDIO BUFFER: 24kHz PCM</text>
+      <text y="122">NETWORK: LOCAL ENCRYPTED</text>
+    </g>
+  </g>
+
+  <!-- ================= CENTER WORKSPACE ================= -->
+
+  <!-- Central Holographic HUD Core -->
+  <g transform="translate(760, 360)">
+    <!-- Ambient Radial Glow -->
+    <circle cx="0" cy="0" r="280" fill="url(#coreGlow)"/>
+
+    <!-- Orbital Rotating Rings -->
+    <circle cx="0" cy="0" r="190" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-opacity="0.3" stroke-dasharray="12, 18"/>
+    <circle cx="0" cy="0" r="160" fill="none" stroke="#e000a8" stroke-width="2" stroke-opacity="0.4" stroke-dasharray="24, 8"/>
+    <circle cx="0" cy="0" r="130" fill="none" stroke="#c084fc" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="4, 10"/>
+    <circle cx="0" cy="0" r="100" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-opacity="0.6"/>
+
+    <!-- Reticle Crosshairs -->
+    <line x1="-220" y1="0" x2="-120" y2="0" stroke="#a855f7" stroke-width="1" stroke-opacity="0.4"/>
+    <line x1="120" y1="0" x2="220" y2="0" stroke="#a855f7" stroke-width="1" stroke-opacity="0.4"/>
+    <line x1="0" y1="-220" x2="0" y2="-120" stroke="#a855f7" stroke-width="1" stroke-opacity="0.4"/>
+    <line x1="0" y1="120" x2="0" y2="220" stroke="#a855f7" stroke-width="1" stroke-opacity="0.4"/>
+
+    <!-- Corner Crosshair Marks -->
+    <path d="M -180 -180 L -165 -180 M -180 -180 L -180 -165" stroke="#e000a8" stroke-width="2" fill="none"/>
+    <path d="M 180 -180 L 165 -180 M 180 -180 L 180 -165" stroke="#e000a8" stroke-width="2" fill="none"/>
+    <path d="M -180 180 L -165 180 M -180 180 L -180 165" stroke="#e000a8" stroke-width="2" fill="none"/>
+    <path d="M 180 180 L 165 180 M 180 180 L 180 165" stroke="#e000a8" stroke-width="2" fill="none"/>
+
+    <!-- Central Glowing Core Sphere -->
+    <circle cx="0" cy="0" r="64" fill="url(#centerOrb)" filter="url(#glow)"/>
+    <circle cx="0" cy="0" r="68" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.7"/>
+
+    <!-- Holographic Waveforms -->
+    <path d="M -60 0 Q -30 -25 0 0 T 60 0" fill="none" stroke="#ffffff" stroke-width="2.5" opacity="0.9"/>
+    <path d="M -50 0 Q -25 20 0 0 T 50 0" fill="none" stroke="#f0abfc" stroke-width="2" opacity="0.8"/>
+
+    <text y="92" font-family="monospace, sans-serif" font-size="12" font-weight="700" fill="#f5efff" text-anchor="middle" letter-spacing="3">AI CORE: JARVIS (LIVE)</text>
+    <text y="108" font-family="monospace, sans-serif" font-size="9.5" fill="#c084fc" text-anchor="middle" letter-spacing="1.5">SUB-120MS FULL DUPLEX STREAM</text>
+  </g>
+
+  <!-- Live Audio Waveform Bars (Below Core) -->
+  <g transform="translate(610, 520)">
+    <rect width="300" height="40" rx="8" fill="#140722" stroke="#2a123f" stroke-width="1"/>
+    <!-- Equalizer Spectrum Bars -->
+    <g transform="translate(20, 20)" fill="url(#magentaGrad)">
+      <rect x="0" y="-8" width="4" height="16" rx="2"/>
+      <rect x="8" y="-12" width="4" height="24" rx="2"/>
+      <rect x="16" y="-6" width="4" height="12" rx="2"/>
+      <rect x="24" y="-15" width="4" height="30" rx="2"/>
+      <rect x="32" y="-18" width="4" height="36" rx="2"/>
+      <rect x="40" y="-11" width="4" height="22" rx="2"/>
+      <rect x="48" y="-7" width="4" height="14" rx="2"/>
+      <rect x="56" y="-14" width="4" height="28" rx="2"/>
+      <rect x="64" y="-20" width="4" height="40" rx="2"/>
+      <rect x="72" y="-13" width="4" height="26" rx="2"/>
+      <rect x="80" y="-9" width="4" height="18" rx="2"/>
+      <rect x="88" y="-16" width="4" height="32" rx="2"/>
+      <rect x="96" y="-22" width="4" height="44" rx="2"/>
+      <rect x="104" y="-14" width="4" height="28" rx="2"/>
+      <rect x="112" y="-8" width="4" height="16" rx="2"/>
+      <rect x="120" y="-17" width="4" height="34" rx="2"/>
+      <rect x="128" y="-21" width="4" height="42" rx="2"/>
+      <rect x="136" y="-12" width="4" height="24" rx="2"/>
+      <rect x="144" y="-7" width="4" height="14" rx="2"/>
+      <rect x="152" y="-15" width="4" height="30" rx="2"/>
+      <rect x="160" y="-23" width="4" height="46" rx="2"/>
+      <rect x="168" y="-18" width="4" height="36" rx="2"/>
+      <rect x="176" y="-10" width="4" height="20" rx="2"/>
+      <rect x="184" y="-16" width="4" height="32" rx="2"/>
+      <rect x="192" y="-21" width="4" height="42" rx="2"/>
+      <rect x="200" y="-13" width="4" height="26" rx="2"/>
+      <rect x="208" y="-6" width="4" height="12" rx="2"/>
+      <rect x="216" y="-15" width="4" height="30" rx="2"/>
+      <rect x="224" y="-19" width="4" height="38" rx="2"/>
+      <rect x="232" y="-11" width="4" height="22" rx="2"/>
+      <rect x="240" y="-7" width="4" height="14" rx="2"/>
+      <rect x="248" y="-12" width="4" height="24" rx="2"/>
+      <rect x="256" y="-5" width="4" height="10" rx="2"/>
+    </g>
+  </g>
+
+  <!-- Live Dialogue & Terminal Stream Box (Bottom Center) -->
+  <g transform="translate(300, 680)">
+    <rect width="920" height="260" rx="14" fill="#0d0417" stroke="#33164c" stroke-width="1.5"/>
+
+    <!-- Dialogue Box Header -->
+    <path d="M 0 14 Q 0 0 14 0 L 906 0 Q 920 0 920 14 L 920 40 L 0 40 Z" fill="#150826"/>
+    <circle cx="20" cy="20" r="4" fill="#00e5a0"/>
+    <text x="34" y="24" font-family="monospace, sans-serif" font-size="11" font-weight="700" fill="#f5efff" letter-spacing="1">CONVERSATION &amp; EXECUTION STREAM</text>
+    <text x="810" y="24" font-family="monospace, sans-serif" font-size="10" fill="#a855f7" letter-spacing="1">REAL-TIME</text>
+    <line x1="0" y1="40" x2="920" y2="40" stroke="#251238"/>
+
+    <!-- Conversation Entries -->
+    <g transform="translate(24, 70)" font-family="monospace, sans-serif">
+      <!-- User Query -->
+      <text font-size="11" font-weight="700" fill="#c084fc">USER (VOICE):</text>
+      <text x="130" font-size="12" fill="#e2e8f0">"Lucy, summarize the meeting notes in my Downloads folder and launch my dev environment."</text>
+
+      <!-- Lucy Response -->
+      <g transform="translate(0, 36)">
+        <text font-size="11" font-weight="700" fill="#00e5a0">LUCY (JARVIS):</text>
+        <text x="130" font-size="12" fill="#f5efff">"Identified 3 key action items in meeting_notes.md. Stored summaries to SQLite memory."</text>
+      </g>
+
+      <!-- Execution Telemetry Line -->
+      <g transform="translate(0, 72)">
+        <text font-size="11" font-weight="700" fill="#e000a8">OS_ACTION:</text>
+        <text x="130" font-size="11" fill="#a99bb8">&gt; Launched VS Code workspace (/projects/lucy-app)</text>
+        <text x="130" y="18" font-size="11" fill="#a99bb8">&gt; Started Vite local server on port 3000</text>
+        <text x="130" y="36" font-size="11" fill="#00e5a0">&gt; Status 200 OK — Ready for prompt.</text>
+      </g>
+    </g>
+
+    <!-- Bottom Input Simulation Bar -->
+    <g transform="translate(20, 206)">
+      <rect width="880" height="38" rx="8" fill="#130722" stroke="#251238"/>
+      <text x="18" y="24" font-family="monospace, sans-serif" font-size="11" fill="#75628a">&gt; Press [Ctrl + Space] to speak or type command here...</text>
+      <rect x="800" y="7" width="66" height="24" rx="6" fill="#a855f7" fill-opacity="0.2" stroke="#a855f7"/>
+      <text x="833" y="23" font-family="monospace, sans-serif" font-size="10" font-weight="700" fill="#c084fc" text-anchor="middle">SPEAK</text>
+    </g>
+  </g>
+
+  <!-- ================= RIGHT PANEL ================= -->
+  <rect x="1260" y="52" width="340" height="948" fill="url(#sidebarGrad)" stroke="#251238" stroke-width="1"/>
+
+  <!-- Right Panel Header -->
+  <g transform="translate(1284, 82)">
+    <text font-family="monospace, sans-serif" font-size="12" font-weight="700" fill="#c084fc" letter-spacing="1.5">ACTIVE SUBSYSTEMS</text>
+    <text y="18" font-family="monospace, sans-serif" font-size="10" fill="#a99bb8">AUTONOMOUS MODULES</text>
+  </g>
+
+  <!-- Module Cards -->
+  <g transform="translate(1284, 130)">
+    <!-- Card 1: Playwright Browser -->
+    <rect width="292" height="74" rx="10" fill="#140824" stroke="#2a1240" stroke-width="1"/>
+    <circle cx="24" cy="24" r="5" fill="#00e5a0" filter="url(#subtleGlow)"/>
+    <text x="38" y="28" font-family="monospace, sans-serif" font-size="11" font-weight="700" fill="#f5efff">PLAYWRIGHT WEB RUNTIME</text>
+    <text x="24" y="52" font-family="monospace, sans-serif" font-size="9.5" fill="#8d7d9e">Chromium &amp; Firefox Headless / Headful</text>
+
+    <!-- Card 2: Vision Stream -->
+    <g transform="translate(0, 88)">
+      <rect width="292" height="74" rx="10" fill="#140824" stroke="#2a1240" stroke-width="1"/>
+      <circle cx="24" cy="24" r="5" fill="#00e5a0" filter="url(#subtleGlow)"/>
+      <text x="38" y="28" font-family="monospace, sans-serif" font-size="11" font-weight="700" fill="#f5efff">SCREEN &amp; WEBCAM VISION</text>
+      <text x="24" y="52" font-family="monospace, sans-serif" font-size="9.5" fill="#8d7d9e">Desktop Screen Capture + 30FPS Video</text>
+    </g>
+
+    <!-- Card 3: Desktop Automation -->
+    <g transform="translate(0, 176)">
+      <rect width="292" height="74" rx="10" fill="#140824" stroke="#2a1240" stroke-width="1"/>
+      <circle cx="24" cy="24" r="5" fill="#a855f7" filter="url(#subtleGlow)"/>
+      <text x="38" y="28" font-family="monospace, sans-serif" font-size="11" font-weight="700" fill="#f5efff">NATIVE OS CONTROLS</text>
+      <text x="24" y="52" font-family="monospace, sans-serif" font-size="9.5" fill="#8d7d9e">App Launcher, System Volume &amp; Shortcuts</text>
+    </g>
+
+    <!-- Card 4: Vector Memory Store -->
+    <g transform="translate(0, 264)">
+      <rect width="292" height="74" rx="10" fill="#140824" stroke="#2a1240" stroke-width="1"/>
+      <circle cx="24" cy="24" r="5" fill="#00e5a0" filter="url(#subtleGlow)"/>
+      <text x="38" y="28" font-family="monospace, sans-serif" font-size="11" font-weight="700" fill="#f5efff">SQLITE FACT STORE</text>
+      <text x="24" y="52" font-family="monospace, sans-serif" font-size="9.5" fill="#8d7d9e">100% Local Encrypted User Context</text>
+    </g>
+
+    <!-- Security Panel -->
+    <g transform="translate(0, 360)">
+      <rect width="292" height="200" rx="10" fill="#10061e" stroke="#220e36" stroke-width="1"/>
+      <text x="18" y="26" font-family="monospace, sans-serif" font-size="10.5" font-weight="700" fill="#c084fc" letter-spacing="1">SECURITY &amp; COMPLIANCE</text>
+
+      <g transform="translate(18, 48)" font-family="monospace, sans-serif" font-size="10" fill="#a99bb8">
+        <text y="0">• Safety Gate: EXPLICIT CONFIRM</text>
+        <text y="24">• Credential Isolation: LOCAL ONLY</text>
+        <text y="48">• No Cloud Telemetry: TRUE</text>
+        <text y="72">• PyAudio Buffer: ZERO LEAK</text>
+        <text y="96">• Companion Pairing: QR SCAN</text>
+        <text y="120">• Port: 8000 (FastAPI WSS)</text>
+      </g>
+    </g>
+  </g>
+</svg>
